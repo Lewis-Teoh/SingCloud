@@ -1,0 +1,13 @@
+div.container {
+    text-align: center;
+    padding-top: 20px;
+}
+ul {
+    list-style: none;
+}
+.btn-secondary{
+    background-color: transparent;
+	border: none;
+	color: grey;
+	padding-top:14px;
+}

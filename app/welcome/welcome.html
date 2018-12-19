@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Login Page</title>
+	<link rel="stylesheet" type="text/css" media="screen" href="welcome/welcome.css" />
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="welcome/mapdata.js"></script>
+	<script src="welcome/worldmap.js"></script>
+
+</head>
+
+<body ng-controller="WelcomeCtrl" style="background-color:aquamarine">
+
+
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="#">SingCloud</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+		 aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNavDropdown">
+			<ul class="navbar-nav">
+				<li class="nav-item active">
+					<a class="nav-link" href="#/welcome">Home <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#/uploadFile">Upload a Song</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#/playlist">Random Playlist</a>
+				</li>
+				<li>
+
+					<div class="nav-item dropdown">
+						<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+						 aria-haspopup="true" aria-expanded="false">
+							Region
+						</button>
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+							<a class="dropdown-item" href="#/US">America</a>
+							<a class="dropdown-item" href="#/PH">Philippines</a>
+							<a class="dropdown-item" href="#/ENGLAND">England</a>
+							<a class="dropdown-item" href="#/SOUTH AFRICA">South Africa</a>
+							<a class="dropdown-item" href="#/French">France</a>
+							<a class="dropdown-item" href="#/CN">Canada</a>
+							<a class="dropdown-item" href="#/IRELAND">Ireland</a>
+						</div>
+					</div>
+
+				</li>
+				<li class="nav-item" id="logout">
+					<a class="nav-link disabled" ng-click="logout()" href="#">Log Out</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<div id="map"></div>
+
+	<div class="container">
+		<div class="row" ng-repeat="article in articles">
+			<div class="col-md-12 well well-sm">
+				<h4>{{article.title}}</h4>
+				<p>{{article.post}}</p>
+				<button type="submit" class="btn btn-sm btn-primary" ng-click="editPost(article.$id)" data-target="#editModal"
+				 data-toggle="modal">Edit</button>
+				<button type="submit" class="btn btn-sm btn-danger" ng-click="deleteCnf(article)" data-target="#deleteModal"
+				 data-toggle="modal">Delete</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div id="editModal" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4>Edit Post Details</h4>
+					</div>
+					<div class="modal-body">
+						<form role="form">
+							<div class="form-group">
+								<label for="title">Title</label>
+								<input type="text" name="title" class="form-control" ng-model="editPostData.title" />
+							</div>
+							<div class="form-group">
+								<label for="post">Post</label>
+								<textarea name="post" class="form-control" ng-model="editPostData.post"></textarea>
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-sm btn-primary" ng-click="updatePost(editPostData.$id)">Update Post</button>
+						<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Cancel</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid">
+		<div id="deleteModal" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header"></div>
+					<div class="modal-body">
+						<p>Are you sure you want to delete the post?</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-sm btn-danger" ng-click="deletePost(deleteArticle)">Delete</button>
+						<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Cancel</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<hr>
+	<div class="container-fluid">
+
+		<header>Pick Your Genre!</header>
+		<div class="row">
+			<div class="col-sm-4">
+				<img src="../Assets/genre_icon.png" class="img-responsive" height="300" width="300">
+			</div>
+			<div class="col-sm-4">
+				<img src="../Assets/genre_icon.png" class="img-responsive" height="300" width="300">
+
+			</div>
+			<div class="col-sm-4">
+				<img src="../Assets/genre_icon.png" class="img-responsive" height="300" width="300">
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-4">
+				<button type="button" class="btn btn-outline-primary btn-rounded waves-effect"><span style="font-size:20px; font-weight: bold;">Folk</span></button>
+			</div>
+			<div class="col-sm-4">
+				<button type="button" class="btn btn-outline-primary btn-rounded waves-effect"><span style="font-size:20px; font-weight: bold;">Country</span></button>
+			</div>
+			<div class="col-sm-4">
+				<button type="button" class="btn btn-outline-primary btn-rounded waves-effect"><span style="font-size:20px; font-weight: bold;">Indie
+						Folk</span></button>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid" id="aboutUs">
+		<header>What is about this site?</header>
+		<hr>
+		<p class="aboutusDes">In your country, city or your village, there are some musicians who play folk music of their
+			area. Maybe they are <br>
+			famous or maybe they are not! Let's introduce them to the world. We are not looking for folk-pop, folk-jazz or <br>
+			folk-rock. We are looking for pure folk and classical traditional of each region. You can send their songs here and
+			<br>
+			give us information about their music and their works. It can be an old farmer or a dedicated musician. Currently
+			<br>
+			its hard to find information about folk / traditional music of all countries in one place. We want to achieve this
+			<br>
+			goal with your help.<br>
+			<br>
+			This project is focused on original folk and traditional music of the different countries, nations and ethnic groups<br>
+			of the world.<br>
+			<br>
+			Although folk music usually refers to orally transmitted music or music with unknown composers, but it can include<br>
+			the traditional classical music of countries as well which theoretically differs from folk music, like Indian<br>
+			traditional classical music vs. Indian folk music. But it doesn't include Western (European) Classical music.<br>
+			<br>
+			These music are accepted here: indigenous music, aboriginal music, ethnic music, regional music, rural music, root<br>
+			music, traditional ritual music, arranged folk music, recreated folk music,...<br>
+			<br>
+			These music are not accepted in this project: folk-pop, folk-rock, folk-jazz (any kind of folk fusion that employs<br>
+			some folk elements like an instrument, a melody or a rhythm in another genre or style), world music (folk music<br>
+			arranged for Western ears with commercial interests, usually published by Western labels, fusion of different
+			original folks <br> 
+			(like Arabic oud with Indian sitar or
+			Spanish flamenco with West African rhythms), <br>modernized and contemporized versions of folk tunes with new sounds,
+			especially electronic sounds.</p>
+	</div>
+	<hr>
+	<footer class="page-footer font-small blue" style="background-color:aquamarine" height="300px">
+
+		<!-- Copyright -->
+		<div class="footer-copyright text-center py-3">© 2018 Copyright:
+			<a href="#"> SingCloud.com</a>
+		</div>
+		<!-- Copyright -->
+
+	</footer>
+</body>
+
+
+</html>

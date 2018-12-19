@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Anak</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="PH/Anak/Anak.css" />
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Upright" rel="stylesheet">
+
+    <script>
+        audiojs.events.ready(function () {
+            var as = audiojs.createAll();
+        });
+    </script>
+
+</head>
+
+<body ng-controller="AnakCtrl">
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">SingCloud</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#/welcome">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#/uploadFile">Upload a Song</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#/playlist">Random Playlist</a>
+                </li>
+                <li>
+
+                    <div class="nav-item dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Region
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#/US">America</a>
+                            <a class="dropdown-item" href="#/PH">Philippines</a>
+                            <a class="dropdown-item" href="#/ENGLAND">England</a>
+                            <a class="dropdown-item" href="#/SOUTH AFRICA">South Africa</a>
+                            <a class="dropdown-item" href="#/French">France</a>
+                            <a class="dropdown-item" href="#/CN">Canada</a>
+                            <a class="dropdown-item" href="#/IRELAND">Ireland</a>
+                        </div>
+                    </div>
+
+                </li>
+                <li class="nav-item" id="logout">
+                    <a class="nav-link disabled" ng-click="logout()" href="#">Log Out</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <header> Anak - Freddie Aguilar</header>
+        <hr>
+    </div>
+    <div class="container-fluid">
+        <div class="row vdivide">
+            <div class="col-sm-4">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/-n-2lPzH7Do" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div>
+                    <audio src="https://firebasestorage.googleapis.com/v0/b/project-management-10eca.appspot.com/o/Freddie%20Aguilar%20%E2%80%94%20Anak%20%5BOfficial%20Lyric%20Video%20with%20Chords%5D.mp3?alt=media&token=f8c641c1-da5f-428a-a52e-0e30e434da5b"
+                        preload="auto">
+                </div>
+                <p class="description">Freddie Aguilar left home at the age of 18 without graduating from school. His
+                    father, who had wanted him to be a lawyer, was disappointed.
+                    <br>
+                    <br>
+                    Freddie traveled to faraway places
+                    carrying with him only his guitar. With no one to guide and discipline him, he got into gambling.
+                    Realizing and regretting his mistakes five years later, Freddie composed "Anak", a song of remorse
+                    and apology to his parents. He went back home and asked for forgiveness from his parents, who
+                    welcomed him with open arms.
+                    <br>
+                    <br>
+                    After his father read the lyrics of "Anak", the two became closer. The
+                    homecoming proved timely as his father died not long after. According to Felipe de Leon, Jr., an
+                    authority on Philippine music, the song was composed in a Western style but has aspects of pasyon,
+                    a form that many Filipinos can identify with and Elmer Estrera the co-composer.
+                </p>
+            </div>
+            <div class="col-sm-5" id="containerLyrics">
+                <h1> Lyrics </h1>
+                <p class="lyrics">Nang isilang ka sa mundong ito<br>
+                    Laking tuwa ng magulang mo<br>
+                    At ang kamay nila ang iyong ilaw<br>
+                    At ang nanay at tatay mo'y<br>
+                    Di malaman ang gagawin<br>
+                    Minamasdan pati pagtulog mo<br>
+                    At sa gabi'y napupuyat ang iyong nanay<br>
+                    Sa pagtimpla ng gatas mo<br>
+                    At sa umaga nama'y kalong ka<br>
+                    Ng iyong amang tuwang-tuwa sa iyo<br>
+                    <br>
+                    Ngayon nga ay malaki ka na<br>
+                    Nais mo'y maging malaya<br>
+                    Di man sila payag<br>
+                    Walang magagawa<br>
+                    Ikaw nga ay biglang nagbago<br>
+                    Naging matigas ang iyong ulo<br>
+                    <br>
+                    At ang payo nila'y sinuway mo<br>
+                    Di mo man lang inisip na<br>
+                    Ang kanilang ginagawa'y para sa iyo<br>
+                    Pagkat ang nais mo'y<br>
+                    Masunod ang layaw mo<br>
+                    Di mo sila pinapansin<br>
+                    <br>
+                    Nagdaan pa ang mga araw<br>
+                    At ang landas mo'y naligaw<br>
+                    Ikaw ay nalulong sa masamang bisyo<br>
+                    At ang una mong nilapitan<br>
+                    Ang iyong inang lumuluha<br>
+                    At ang tanong,"anak, ba't ka nagkaganyan"<br>
+                    At ang iyong mata'y biglang lumuha ng di mo pinapansin<br>
+                    Nagsisisi at sa isip mo'y<br>
+                    Nalaman mong ika'y nagkamali<br>
+                    Nagsisisi at sa isip mo'y<br>
+                    Nalaman mong ika'y nagkamali<br>
+                    Nagsisisi at sa isip mo'y<br>
+                    Nalaman mong ika'y nagkamali<br>
+                    Nagsisisi at sa isip mo'y<br>
+                    Nalaman mong ika'y nagkamali<p>
+            </div>
+
+            <div class="col-sm-3">
+
+                <a class="btn btn-social-icon btn-twitter">
+                    <span class="fa fa-twitter"></span>
+                </a>
+
+                <a class="btn btn-social-icon btn-facebook">
+                    <span class="fa fa-facebook"></span>
+                </a>
+
+                <a class="btn btn-social-icon btn-instagram">
+                    <span class="fa fa-instagram"></span>
+                </a>
+
+                <a class="btn btn-social-icon btn-google">
+                    <span class="fa fa-google"></span>
+                </a>
+
+                <a class="btn btn-social-icon btn-linkedin">
+                    <span class="fa fa-linkedin"></span>
+                </a>
+
+                <a class="btn btn-social-icon btn-yahoo">
+                    <span class="fa fa-yahoo"></span>
+                </a>
+                <hr>
+                <p class="details">Song details</p>
+
+                <p class="songDetails">Song Name : Anak<br>
+                    By : Freddie Aguilar<br>
+                    Country : Philippines<br>
+                    Date Added : 10 Sept 2018<br>
+                    Genre : Rock , Pop</p>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="container-fluid" id="comments">
+        <header>Reviews</header>
+        <hr>
+        <div class="row" ng-repeat="article in articles">
+            <div class="col-sm-12">
+                <p class="username"><span class="glyphicon glyphicon-user"></span> From : {{article.username}}</p>
+                <p class="comment">Comment : {{article.comment}}</p>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="container-fluid" id="comments">
+
+        <form role="form" name="postForm" ng-submit="createPost()" novalidate="">
+            <legend>Comments</legend>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="form-group" ng-class="{'has-error': postForm.usernameTxt.$invalid && postForm.usernameTxt.$touched}">
+                        <label for="usernameTxt">Your Name</label>
+                        <input type="text" name="usernameTxt" class="form-control" placeholder="Name" ng-model="article.usernameTxt"
+                            ng-minlength="5" required="">
+                        <small class="help-block" ng-show="postForm.titleTxt.$error.minlength && postForm.titleTxt.$touched">Please
+                            enter a valid title for post.</small>
+                    </div>
+                    <div class="form-group" ng-class="{'has-error': postForm.commentTxt.$invalid && postForm.commentTxt.$touched}">
+                        <label for="commentTxt">Comment</label>
+                        <textarea name="commentTxt" class="form-control" placeholder="Comments Here!" ng-model="article.commentTxt"
+                            ng-minlength="20" required=""></textarea>
+                        <small class="help-block" ng-show="postForm.postTxt.$error.minlength && postForm.postTxt.$touched">Please
+                            enter a valid post.</small>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary" ng-disabled="postForm.$invalid">Add Comments</button>
+                        <div class="container" ng-show="success">
+                            <div class="row">
+                                <div class="alert alert-success">
+                                    <strong>Success!</strong> The comment has beed added.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AnguarJs SoundManager2</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="playlist/playlist.css">
+</head>
+
+<body ng-app="myApp">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">SingCloud</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#/welcome">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#/uploadFile">Upload a Song</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#/playlist">Random Playlist</a>
+                </li>
+                <li>
+
+                    <div class="nav-item dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Region
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#/US">America</a>
+                            <a class="dropdown-item" href="#/PH">Philippines</a>
+                            <a class="dropdown-item" href="#/ENGLAND">England</a>
+                            <a class="dropdown-item" href="#/SOUTH AFRICA">South Africa</a>
+                            <a class="dropdown-item" href="#/French">France</a>
+                            <a class="dropdown-item" href="#/CN">Canada</a>
+                            <a class="dropdown-item" href="#/IRELAND">Ireland</a>
+                        </div>
+                    </div>
+
+                </li>
+                <li class="nav-item" id="logout">
+                    <a class="nav-link disabled" ng-click="logout()" href="#">Log Out</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid" id="Define">
+        <header>Definition of Folk Song</header>
+        <p class="Definition">The distinction between folk song and folk music is undefined. Neither has any scholar
+            authoritatively defined a folk song. Those scholars in the field of studying or collecting the folk songs
+            have taken two entities as one whole entity. Folk song collectors like Alan Lomax, Cecil Sharp, Bruno Nuttl
+            and others have not made a clear distinction between the folk song and folk music. But Maud Karpeles in his
+            book The Foundation of Folk Song, writes; „Fortunately, intuition is not all that is left to us. Still, if
+            musical folklore is a science, experience shows that it is a subject to sudden caprices and its delineation
+            is very hard to fix.‟ Thus Maud Karpeles quote what the International Folk music Council adopted as the
+            definition of folk music after long discussion at Sao Paulo, Brazil in 1954: Folk music is the product of a
+            musical tradition that has been evolved through the process of transmission. The factors that 4 shape the
+            traditions are : <br><br>
+            i) continuity which links the present with the past<br>
+            ii) variation which springs from the creative impulse of the individual or the group<br>
+            iii) selection by the community, which determines the
+            form or forms in which the music survives. This definition that can be applied to music or folk song has
+            evolved from the simple beginnings in a community uninfluenced by other form of music or song. The
+            definition can likewise be applied to music which has originated with an individual composer and has
+            subsequently been absorbed into the unwritten living tradition of a community.</p>
+    </div>
+    <div class="container-fluid" ng-controller="PlaylistCtrl">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h5> Your Playlist</h5>
+                    <table class="table table-striped">
+                        <thead>
+
+                        </thead>
+                        <tr ng-repeat="song in playlist">
+                            <td>
+                                <a play-from-playlist="song"> <span class="glyphicon glyphicon-music"></span> {{
+                                    song.title
+                                    }}</a>
+                                -
+                                <a remove-from-playlist="song" data-index="{{$index}}">
+                                    <small>(remove)</small>
+                                </a>
+                                <span ng-if="currentPlaying.id == song.id"> - (current)</span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-sm-6">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- init soundManager2 player -->
+                            <sound-manager></sound-manager>
+                            <h5>Random Songs</h5>
+                            <table class="table table-striped">
+                                <thead>
+
+                                </thead>
+                                <tbody>
+                                    <tr id="songlist" ng-repeat="song in songs">
+                                        <td>
+                                            <button music-player="play" add-song="song"><span class="glyphicon glyphicon-music"></span>
+                                                {{ song.title }}</button>
+                                        </td>
+                                        <td>
+                                            <button music-player add-song="song">Add to playlist!</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <button play-all="songs">Play all</button>
+                            <button play-all="songs" data-play="false">Add all</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <hr>
+
+        <!-- <div class="row">
+            <div class="col-md-12">
+                 init soundManager2 player -->
+        <sound-manager></sound-manager>
+
+        <!-- <p>
+                    Currently Playing: {{ currentPlaying.title }} by {{ currentPlaying.artist }} ({{ currentPostion }}
+                    / {{ currentDuration }})
+                </p>
+
+                <div class="seekBase" seek-track>
+                    <div class="seekLoad" ng-style="{width : ( progress + '%' ) }"></div>
+                </div> -->
+        <br />
+
+        <!-- Is Playing: {{ isPlaying }}
+                <br />
+                <br />Volume: {{ volume }} -
+                <button music-volume data-type="increase">+</button>
+                -
+                <button music-volume data-type="decrease">-</button>
+                -
+                <button mute-music>Mute ({{ mute }})</button>
+                <br />
+                <br />
+                <button prev-track>Prev Track</button>
+                -
+                <button next-track>Next Track</button>
+                -
+                <button clear-playlist>Clear Playlist</button>
+                <br />
+                <br />
+            </div>
+        </div>
+    </div> -->
+        <div class="footer" ng-controller="PlaylistCtrl" id="parent">
+            <!-- init soundManager2 player -->
+            <sound-manager></sound-manager>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm">
+                        <p>
+                            Currently Playing: {{ currentPlaying.title }} by {{ currentPlaying.artist }}
+                        </p>
+
+                    </div>
+                    <div class="col-md-8">
+                        <div>
+                            <button class="btn btn-default btn-circle" play-music><span title="Play" id="play" class="glyphicon glyphicon-play-circle"></span></button>
+                            <button class="btn btn-default btn-circle" prev-track><span title="Prev" id="prev" class="glyphicon glyphicon-step-backward"></button>
+                            <button class="btn btn-default btn-circle" pause-music><span title="Pause" id="pause" class="glyphicon glyphicon-pause aligned"></span></button>
+                            <button class="btn btn-default btn-circle" next-track><span title="Next" id="next" class="glyphicon glyphicon-step-forward"></span></button>
+                            <button class="btn btn-default btn-circle" stop-music><span title="Stop" id="stop" class="glyphicon glyphicon-stop aligned"></span></button>
+                            <button class="btn btn-default btn-circle" repeat-music><span title="Repeat" id="repeat"
+                                    class="glyphicon glyphicon-repeat aligned"></span></button>
+                            <!-- ({{ repeat }})</button> -->
+                            <button class="btn btn-default btn-circle" play-pause-toggle data-play="Play!" data-pause="Pause!">Play
+                                Toggle</button>
+                        </div>
+                        <div class="seekBase" style="height: 1.5px;" seek-track>
+                            <div class="seekLoad" style="height: 1px;" ng-style="{width : ( progress + '%' )}"></div>
+                            <p>{{ currentPostion}}/ {{ currentDuration }}</p>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <button class="btn btn-default btn-circle" music-volume data-type="increase"><span title="volume-up"
+                                id="volume-up" class="glyphicon glyphicon-volume-up"></span></button>
+
+                        <button class="btn btn-default btn-circle" music-volume data-type="decrease"><span title="volume-down"
+                                id="volume-down" class="glyphicon glyphicon-volume-down"></span></button>
+                        <button class="btn btn-default btn-circle" mute-music><span title="volume-off" id="volume-off"
+                                class="glyphicon glyphicon-volume-off"></span></button>
+                        <button class="btn btn-default btn-circle" clear-playlist>Clear Playlist</button>
+                        Is Playing: {{ isPlaying }}
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+</body>
+
+</html>

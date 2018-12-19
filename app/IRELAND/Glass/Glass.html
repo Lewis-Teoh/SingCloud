@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>The Parting Glass</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="ENGLAND/ML/ML.css" />
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Upright" rel="stylesheet">
+
+    <script>
+        audiojs.events.ready(function () {
+            var as = audiojs.createAll();
+        });
+    </script>
+
+</head>
+
+<body ng-controller="GlassCtrl">
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">SingCloud</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#/welcome">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#/uploadFile">Upload a Song</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#/playlist">Random Playlist</a>
+                </li>
+                <li>
+
+                    <div class="nav-item dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Region
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#/US">America</a>
+                            <a class="dropdown-item" href="#/PH">Philippines</a>
+                            <a class="dropdown-item" href="#/ENGLAND">England</a>
+                            <a class="dropdown-item" href="#/SOUTH AFRICA">South Africa</a>
+                            <a class="dropdown-item" href="#/French">France</a>
+                            <a class="dropdown-item" href="#/CN">Canada</a>
+                            <a class="dropdown-item" href="#/IRELAND">Ireland</a>
+                        </div>
+                    </div>
+
+                </li>
+                <li class="nav-item" id="logout">
+                    <a class="nav-link disabled" ng-click="logout()" href="#">Log Out</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <header> The Parting Glass - The Clancy Brothers</header>
+        <hr>
+    </div>
+    <div class="container-fluid">
+        <div class="row vdivide">
+            <div class="col-sm-4">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/4Np_Ud4KA08" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div>
+                    <audio src="https://firebasestorage.googleapis.com/v0/b/project-management-10eca.appspot.com/o/The%20Clancy%20Brothers%20and%20Tommy%20Makem%20-%20The%20Parting%20Glass.mp3?alt=media&token=2a3980b0-e452-4668-a9c4-9beb754c27be"
+                        preload="auto">
+                </div>
+                <p class="description">The "parting glass", or "stirrup cup", or "coupe d'etrier" was the final
+                    hospitality offered to a departing guest. Once they had mounted, they were presented one final
+                    drink to fortify them for their travels. The custom was practiced in Saxony and in several
+                    continental countries.
+                    <br><br>
+                    The earliest known printed version was as a broadside in the 1770s and it first appeared in book
+                    form in "Scots Songs" by Herd. An early version is sometimes attributed to Sir Alex Boswell. The
+                    text is doubtless older than its 1770 appearance in broadside, as it was recorded in the Skene
+                    Manuscript, a collection of Scottish airs written at various dates between 1615 and 1635.
+                    <br><br>
+                    It was
+                    known at least as early as 1605, when a portion of the first stanza was written in a farewell
+                    letter, as a poem now known as "Armstrong's Goodnight", by one of the Border Reivers executed that
+                    year for the murder in 1600 of Sir John Carmichael, Warden of the Scottish West March.
+
+
+                </p>
+            </div>
+            <div class="col-sm-5" id="containerLyrics">
+                <h1> Lyrics </h1>
+                <p class="lyrics">Of all the money that e'er I spent<br>
+                    I've spent it in good company<br>
+                    And all the harm that ever I did<br>
+                    Alas it was to none but me<br>
+                    And all I've done for want of wit<br>
+                    To memory now I can't recall<br>
+                    So fill to me the parting glass<br>
+                    Good night and joy be with you all<br>
+                    If I had money enough to spend<br>
+                    And leisure to sit awhile<br>
+                    There is a fair maid in the town<br>
+                    That sorely has my heart beguiled<br>
+                    <br>
+                    Her rosy cheeks and ruby lips<br>
+                    I own she has my heart enthralled<br>
+                    So fill to me the parting glass<br>
+                    Good night and joy be with you all<br>
+                    Oh, all the comrades that e'er I had<br>
+                    They're sorry for my going away<br>
+                    And all the sweethearts that e'er I had<br>
+                    They'd wish me one more day to stay<br>
+                    But since it falls unto my lot<br>
+                    That I should rise and you should not<br>
+                    I'll gently rise and softly call<br>
+                    Good night and joy be with you all</p>
+            </div>
+
+            <div class="col-sm-3">
+
+                <a class="btn btn-social-icon btn-twitter">
+                    <span class="fa fa-twitter"></span>
+                </a>
+
+                <a class="btn btn-social-icon btn-facebook">
+                    <span class="fa fa-facebook"></span>
+                </a>
+
+                <a class="btn btn-social-icon btn-instagram">
+                    <span class="fa fa-instagram"></span>
+                </a>
+
+                <a class="btn btn-social-icon btn-google">
+                    <span class="fa fa-google"></span>
+                </a>
+
+                <a class="btn btn-social-icon btn-linkedin">
+                    <span class="fa fa-linkedin"></span>
+                </a>
+
+                <a class="btn btn-social-icon btn-yahoo">
+                    <span class="fa fa-yahoo"></span>
+                </a>
+                <hr>
+                <p class="details">Song details</p>
+
+                <p class="songDetails">Song Name : The Parting Glass<br>
+                    By : The Clancy Brothers<br>
+                    Country : Ireland<br>
+                    Album : In Person at Carnegie Hall<br>
+                    Date Added : 5 Nov 2018<br>
+                    Genre : Folk</p>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="container-fluid" id="comments">
+        <header>Reviews</header>
+        <hr>
+        <div class="row" ng-repeat="article in articles">
+            <div class="col-sm-12">
+                <p class="username"><span class="glyphicon glyphicon-user"></span> From : {{article.username}}</p>
+                <p class="comment">Comment : {{article.comment}}</p>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="container-fluid" id="comments">
+
+        <form role="form" name="postForm" ng-submit="createPost()" novalidate="">
+            <legend>Comments</legend>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="form-group" ng-class="{'has-error': postForm.usernameTxt.$invalid && postForm.usernameTxt.$touched}">
+                        <label for="usernameTxt">Your Name</label>
+                        <input type="text" name="usernameTxt" class="form-control" placeholder="Name" ng-model="article.usernameTxt"
+                            ng-minlength="5" required="">
+                        <small class="help-block" ng-show="postForm.titleTxt.$error.minlength && postForm.titleTxt.$touched">Please
+                            enter a valid title for post.</small>
+                    </div>
+                    <div class="form-group" ng-class="{'has-error': postForm.commentTxt.$invalid && postForm.commentTxt.$touched}">
+                        <label for="commentTxt">Comment</label>
+                        <textarea name="commentTxt" class="form-control" placeholder="Comments Here!" ng-model="article.commentTxt"
+                            ng-minlength="20" required=""></textarea>
+                        <small class="help-block" ng-show="postForm.postTxt.$error.minlength && postForm.postTxt.$touched">Please
+                            enter a valid post.</small>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary" ng-disabled="postForm.$invalid">Add Comments</button>
+                        <div class="container" ng-show="success">
+                            <div class="row">
+                                <div class="alert alert-success">
+                                    <strong>Success!</strong> The comment has beed added.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>

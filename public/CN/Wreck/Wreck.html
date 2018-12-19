@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>The Wreck of the Edmund Fitzgerald</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="ENGLAND/ML/ML.css" />
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Upright" rel="stylesheet">
+
+    <script>
+        audiojs.events.ready(function () {
+            var as = audiojs.createAll();
+        });
+    </script>
+
+</head>
+
+<body ng-controller="WreckCtrl">
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">SingCloud</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#/welcome">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#/uploadFile">Upload a Song</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#/playlist">Random Playlist</a>
+                </li>
+                <li>
+
+                    <div class="nav-item dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Region
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#/US">America</a>
+                            <a class="dropdown-item" href="#/PH">Philippines</a>
+                            <a class="dropdown-item" href="#/ENGLAND">England</a>
+                            <a class="dropdown-item" href="#/SOUTH AFRICA">South Africa</a>
+                            <a class="dropdown-item" href="#/French">France</a>
+                            <a class="dropdown-item" href="#/CN">Canada</a>
+                            <a class="dropdown-item" href="#/IRELAND">Ireland</a>
+                        </div>
+                    </div>
+
+                </li>
+                <li class="nav-item" id="logout">
+                    <a class="nav-link disabled" ng-click="logout()" href="#">Log Out</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <header> The Wreck of the Edmund Fitzgerald - Gordon Lightfoot</header>
+        <hr>
+    </div>
+    <div class="container-fluid">
+        <div class="row vdivide">
+            <div class="col-sm-4">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/hgI8bta-7aw" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div>
+                    <audio src="https://firebasestorage.googleapis.com/v0/b/project-management-10eca.appspot.com/o/The%20Wreck%20of%20the%20Edmund%20Fitzgerald%20-%20Gordon%20Lightfoot%20(HD%20w%20Lyrics).mp3?alt=media&token=d501b1ce-7679-4203-bfc0-65677e2b9d9d"
+                        preload="auto">
+                </div>
+                <p class="description">"The Wreck of the Edmund Fitzgerald" is a song written, composed, and performed
+                    by Canadian singer-songwriter Gordon Lightfoot to commemorate the sinking of the bulk carrier SS
+                    Edmund Fitzgerald on Lake Superior on November 10, 1975.
+                    <br><br>
+                    Lightfoot drew his inspiration from
+                    Newsweek's article on the event, "The Cruelest Month", which it published in its November 24, 1975,
+                    issue. Lightfoot considers this song to be his finest work.
+                    <br><br>
+                    Appearing originally on Lightfoot's 1976 album Summertime Dream, the single version hit number 1 in
+                    his native Canada (in the RPM national singles survey) on November 20, 1976, barely a year after
+                    the disaster. In the United States, it reached number 1 in Cashbox and number 2 for two weeks in
+                    the Billboard Hot 100 (behind Rod Stewart's "Tonight's The Night"), making it Lightfoot's
+                    second-most-successful single behind "Sundown".
+                    <br><br>
+                    Overseas it was at best a minor hit, peaking at
+                    number 40 in the UK Singles Chart.
+                    The song is written in Dorian mode.
+
+
+
+                </p>
+            </div>
+            <div class="col-sm-5" id="containerLyrics">
+                <h1> Lyrics </h1>
+                <p class="lyrics">The legend lives on from the Chippewa on down<br>
+                    Of the big lake they called 'gitche gumee'<br>
+                    The lake, it is said, never gives up her dead<br>
+                    When the skies of November turn gloomy<br>
+                    With a load of iron ore twenty-six thousand tons more<br>
+                    Than the Edmund Fitzgerald weighed empty<br>
+                    That good ship and crew was a bone to be chewed<br>
+                    When the gales of November came early<br>
+                    <br>
+                    The ship was the pride of the American side<br>
+                    Coming back from some mill in Wisconsin<br>
+                    As the big freighters go, it was bigger than most<br>
+                    With a crew and good captain well seasoned<br>
+                    Concluding some terms with a couple of steel firms<br>
+                    When they left fully loaded for Cleveland<br>
+                    And later that night when the ship's bell rang<br>
+                    Could it be the north wind they'd been feelin'?<br>
+                    <br>
+                    The wind in the wires made a tattle-tale sound<br>
+                    And a wave broke over the railing<br>
+                    And every man knew, as the captain did too,<br>
+                    T'was the witch of November come stealin'<br>
+                    The dawn came late and the breakfast had to wait<br>
+                    When the gales of November came slashin'<br>
+                    When afternoon came it was freezin' rain<br>
+                    In the face of a hurricane west wind<br>
+                    <br>
+                    When suppertime came, the old cook came on deck sayin'<br>
+                    Fellas, it's too rough to feed ya<br>
+                    At seven pm a main hatchway caved in, he said<br>
+                    Fellas, it's been good t'know ya<br>
+                    The captain wired in he had water comin' in<br>
+                    And the good ship and crew was in peril<br>
+                    And later that night when his lights went outta sight<br>
+                    Came the wreck of the Edmund Fitzgerald<br>
+                    Does any one know where the love of God goes<br>
+                    When the waves turn the minutes to hours?<br>
+                    The searches all say they'd have made Whitefish Bay<br>
+                    If they'd put fifteen more miles behind her<br>
+                    They might have split up or they might have capsized<br>
+                    They may have broke deep and took water<br>
+                    And all that remains is the faces and the names<br>
+                    Of the wives and the sons and the daughters<br>
+                    <br>
+                    Lake Huron rolls, superior sings<br>
+                    In the rooms of her ice-water mansion<br>
+                    Old Michigan steams like a young man's dreams<br>
+                    The islands and bays are for sportsmen<br>
+                    And farther below Lake Ontario<br>
+                    Takes in what Lake Erie can send her<br>
+                    And the iron boats go as the mariners all know<br>
+                    With the gales of November remembered<br>
+                    <br>
+                    In a musty old hall in Detroit they prayed,<br>
+                    In the maritime sailors' cathedral<br>
+                    The church bell chimed till it rang twenty-nine times<br>
+                    For each man on the Edmund Fitzgerald<br>
+                    The legend lives on from the Chippewa on down<br>
+                    Of the big lake they call 'gitche gumee'<br>
+                    Superior, they said, never gives up her dead<br>
+                    When the gales of November come early</p>
+            </div>
+
+            <div class="col-sm-3">
+
+                <a class="btn btn-social-icon btn-twitter">
+                    <span class="fa fa-twitter"></span>
+                </a>
+
+                <a class="btn btn-social-icon btn-facebook">
+                    <span class="fa fa-facebook"></span>
+                </a>
+
+                <a class="btn btn-social-icon btn-instagram">
+                    <span class="fa fa-instagram"></span>
+                </a>
+
+                <a class="btn btn-social-icon btn-google">
+                    <span class="fa fa-google"></span>
+                </a>
+
+                <a class="btn btn-social-icon btn-linkedin">
+                    <span class="fa fa-linkedin"></span>
+                </a>
+
+                <a class="btn btn-social-icon btn-yahoo">
+                    <span class="fa fa-yahoo"></span>
+                </a>
+                <hr>
+                <p class="details">Song details</p>
+
+                <p class="songDetails">Song Name : The Wreck of the Edmund Fitzgerald<br>
+                    By : Gordon Lightfoot<br>
+                    Country : Canada<br>
+                    Album : Summertime Dream<br>
+                    Date Added : 10 Oct 2018<br>
+                    Genre : Folk</p>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="container-fluid" id="comments">
+        <header>Reviews</header>
+        <hr>
+        <div class="row" ng-repeat="article in articles">
+            <div class="col-sm-12">
+                <p class="username"><span class="glyphicon glyphicon-user"></span> From : {{article.username}}</p>
+                <p class="comment">Comment : {{article.comment}}</p>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="container-fluid" id="comments">
+
+        <form role="form" name="postForm" ng-submit="createPost()" novalidate="">
+            <legend>Comments</legend>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="form-group" ng-class="{'has-error': postForm.usernameTxt.$invalid && postForm.usernameTxt.$touched}">
+                        <label for="usernameTxt">Your Name</label>
+                        <input type="text" name="usernameTxt" class="form-control" placeholder="Name" ng-model="article.usernameTxt"
+                            ng-minlength="5" required="">
+                        <small class="help-block" ng-show="postForm.titleTxt.$error.minlength && postForm.titleTxt.$touched">Please
+                            enter a valid title for post.</small>
+                    </div>
+                    <div class="form-group" ng-class="{'has-error': postForm.commentTxt.$invalid && postForm.commentTxt.$touched}">
+                        <label for="commentTxt">Comment</label>
+                        <textarea name="commentTxt" class="form-control" placeholder="Comments Here!" ng-model="article.commentTxt"
+                            ng-minlength="20" required=""></textarea>
+                        <small class="help-block" ng-show="postForm.postTxt.$error.minlength && postForm.postTxt.$touched">Please
+                            enter a valid post.</small>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary" ng-disabled="postForm.$invalid">Add Comments</button>
+                        <div class="container" ng-show="success">
+                            <div class="row">
+                                <div class="alert alert-success">
+                                    <strong>Success!</strong> The comment has beed added.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>

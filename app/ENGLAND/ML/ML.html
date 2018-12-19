@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Miller & the Lass</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="ENGLAND/ML/ML.css" />
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Upright" rel="stylesheet">
+
+    <script>
+        audiojs.events.ready(function () {
+            var as = audiojs.createAll();
+        });
+    </script>
+
+</head>
+
+<body ng-controller="MLCtrl">
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">SingCloud</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#/welcome">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#/uploadFile">Upload a Song</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#/playlist">Random Playlist</a>
+                </li>
+                <li>
+
+                    <div class="nav-item dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Region
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#/US">America</a>
+                            <a class="dropdown-item" href="#/PH">Philippines</a>
+                            <a class="dropdown-item" href="#/ENGLAND">England</a>
+                            <a class="dropdown-item" href="#/SOUTH AFRICA">South Africa</a>
+                            <a class="dropdown-item" href="#/French">France</a>
+                            <a class="dropdown-item" href="#/CN">Canada</a>
+                            <a class="dropdown-item" href="#/IRELAND">Ireland</a>
+                        </div>
+                    </div>
+
+                </li>
+                <li class="nav-item" id="logout">
+                    <a class="nav-link disabled" ng-click="logout()" href="#">Log Out</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <header> Miller and the Lass - Eliza Carthy</header>
+        <hr>
+    </div>
+    <div class="container-fluid">
+        <div class="row vdivide">
+            <div class="col-sm-4">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/S6JSF78NGA0" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div>
+                    <audio src="https://firebasestorage.googleapis.com/v0/b/project-management-10eca.appspot.com/o/Eliza%20Carthy%20-%20Miller%20%20the%20Lass.mp3?alt=media&token=942b32f8-db85-497f-9af3-a46847131c3a"
+                        preload="auto">
+                </div>
+                <p class="description">George Dunn sang The Miller's Song in a recording made by Bill Leader in
+                    December 1971. It was published in 1975 on his eponymous Leader album George Dunn. Another
+                    recording made by Roy Palmer in July 1971 was included in 2002 on Dunn's Musical Traditions
+                    anthology Chainmaker.
+                    <br><br>
+                    Roy Palmer and Rod Stradling commented in the latter album's booklet
+                    This is one of the songs first recalled by George Dunn (in March 1971) and one of the last recorded
+                    by him (in January 1975, three months before his death). He greatly relished singing this
+                    marvellously life-affirming piece which, after being noted a handful of times between them in the
+                    early years of the twentieth century, though not published, by Sharp (in Somerset) and Gardiner (in
+                    Hampshire), became decidedly rare.
+                    <br><br>
+                    An equally rare early version appeared in James Johnson's Scots
+                    Musical Museum (4 vols, 1787-1803), iii, no. 481. George's is the only known recording of the song.
+                    Eliza Carthy sang Miller and the Lass in 1998 on her album Rice with Saul Rose playing melodeon and
+                    singing chorus and Ed Boyd playing guitar.
+                    Andy Turner found The Maid and the Miller in Roy Palmer's 1972 book Songs of the Midlands and sang
+                    it as the March 23, 2014 entry of his project A Folk Song a Week.
+
+                </p>
+            </div>
+            <div class="col-sm-5" id="containerLyrics">
+                <h1> Lyrics </h1>
+                <p class="lyrics">There was a buxom and a brisk young lass,<br>
+                    Went down to the mill one day-o<br>
+                    To get some corn oh for to grind<br>
+                    But the devil out there to the miller could she find<br>
+                    <br>
+                    Chorus (repeated after each verse):<br>
+                    With a/me fal the diddle I do fal the diddle ay,<br>
+                    Fal the diddle I do fal the diddle ay.<br>
+                    <br>
+                    Singing dum dub a dum dum day<br>
+                    <br>
+                    At last the miller he came in;<br>
+                    The pretty fair maid she did begin:<br>
+                    "A peck of corn I have to grind<br>
+                    But never a miller can I find."<br>
+                    <br>
+                    Singing dum dub a dum dum day<br>
+                    <br>
+                    "Come, sit you down, my sweet pretty dear<br>
+                    I cannot grind your corn I fear;<br>
+                    My stones is high and the water's low,<br>
+                    And I can't grind for the mill won't go."<br>
+                    <br>
+                    Singing dum dub a dum dum day<br>
+                    <br>
+                    So she sat down on a sack,<br>
+                    And he talked of this, and he talked of that,<br>
+                    He talked of love, of her love proved kind<br>
+                    And she soon found that the mill would grind.</p>
+            </div>
+
+            <div class="col-sm-3">
+
+                <a class="btn btn-social-icon btn-twitter">
+                    <span class="fa fa-twitter"></span>
+                </a>
+
+                <a class="btn btn-social-icon btn-facebook">
+                    <span class="fa fa-facebook"></span>
+                </a>
+
+                <a class="btn btn-social-icon btn-instagram">
+                    <span class="fa fa-instagram"></span>
+                </a>
+
+                <a class="btn btn-social-icon btn-google">
+                    <span class="fa fa-google"></span>
+                </a>
+
+                <a class="btn btn-social-icon btn-linkedin">
+                    <span class="fa fa-linkedin"></span>
+                </a>
+
+                <a class="btn btn-social-icon btn-yahoo">
+                    <span class="fa fa-yahoo"></span>
+                </a>
+                <hr>
+                <p class="details">Song details</p>
+
+                <p class="songDetails">Song Name : Miller and the Lass<br>
+                    By : Eliza Carthy<br>
+                    Country : United Kingdom<br>
+                    Album : Red Rice
+                    Date Added : 10 Sept 2018<br>
+                    Genre : Folk</p>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="container-fluid" id="comments">
+        <header>Reviews</header>
+        <hr>
+        <div class="row" ng-repeat="article in articles">
+            <div class="col-sm-12">
+                <p class="username"><span class="glyphicon glyphicon-user"></span> From : {{article.username}}</p>
+                <p class="comment">Comment : {{article.comment}}</p>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="container-fluid" id="comments">
+
+        <form role="form" name="postForm" ng-submit="createPost()" novalidate="">
+            <legend>Comments</legend>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="form-group" ng-class="{'has-error': postForm.usernameTxt.$invalid && postForm.usernameTxt.$touched}">
+                        <label for="usernameTxt">Your Name</label>
+                        <input type="text" name="usernameTxt" class="form-control" placeholder="Name" ng-model="article.usernameTxt"
+                            ng-minlength="5" required="">
+                        <small class="help-block" ng-show="postForm.titleTxt.$error.minlength && postForm.titleTxt.$touched">Please
+                            enter a valid title for post.</small>
+                    </div>
+                    <div class="form-group" ng-class="{'has-error': postForm.commentTxt.$invalid && postForm.commentTxt.$touched}">
+                        <label for="commentTxt">Comment</label>
+                        <textarea name="commentTxt" class="form-control" placeholder="Comments Here!" ng-model="article.commentTxt"
+                            ng-minlength="20" required=""></textarea>
+                        <small class="help-block" ng-show="postForm.postTxt.$error.minlength && postForm.postTxt.$touched">Please
+                            enter a valid post.</small>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary" ng-disabled="postForm.$invalid">Add Comments</button>
+                        <div class="container" ng-show="success">
+                            <div class="row">
+                                <div class="alert alert-success">
+                                    <strong>Success!</strong> The comment has beed added.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Miller & the Lass</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="ENGLAND/ML/ML.css" />
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Upright" rel="stylesheet">
+
+    <script>
+        audiojs.events.ready(function () {
+            var as = audiojs.createAll();
+        });
+    </script>
+
+</head>
+
+<body ng-controller="EscarpmentsCtrl">
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">SingCloud</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#/welcome">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#/uploadFile">Upload a Song</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#/playlist">Random Playlist</a>
+                </li>
+                <li>
+
+                    <div class="nav-item dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Region
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#/US">America</a>
+                            <a class="dropdown-item" href="#/PH">Philippines</a>
+                            <a class="dropdown-item" href="#/ENGLAND">England</a>
+                            <a class="dropdown-item" href="#/SOUTH AFRICA">South Africa</a>
+                            <a class="dropdown-item" href="#/French">France</a>
+                            <a class="dropdown-item" href="#/CN">Canada</a>
+                            <a class="dropdown-item" href="#/IRELAND">Ireland</a>
+                        </div>
+                    </div>
+
+                </li>
+                <li class="nav-item" id="logout">
+                    <a class="nav-link disabled" ng-click="logout()" href="#">Log Out</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <header> Escarpment Blues - Sarah Harmer</header>
+        <hr>
+    </div>
+    <div class="container-fluid">
+        <div class="row vdivide">
+            <div class="col-sm-4">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/oeM5ExaF6cE" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div>
+                    <audio src="https://firebasestorage.googleapis.com/v0/b/project-management-10eca.appspot.com/o/Sarah%20Harmer%20-%20Escarpment%20Blues.mp3?alt=media&token=a9216299-51a4-4325-8498-c6b50aa5f477"
+                        preload="auto">
+                </div>
+                <p class="description">Escarpment Blues is a Canadian concert and documentary film starring
+                    singer-songwriter Sarah Harmer. Directed by Andy Keen and produced by Keen, Harmer, Bryan Bean and
+                    Patrick Sambrook, it was released theatrically in 2006.
+                    <br><br>
+                    In June 2005, Harmer launched a tour, called I Love the Escarpment, across southern Ontario to
+                    promote Protecting Escarpment Rural Land (PERL), a conservation group she cofounded to battle a
+                    proposed quarry development on the Niagara Escarpment near her hometown of Burlington.
+                    <br><br>
+                    Harmer
+                    toured communities near the escarpment, both performing and speaking about the PERL campaign.The
+                    film documents both her live performances and her activist work from the tour, and takes its name
+                    from "Escarpment Blues", a song from her 2005 album I'm a Mountain.
+                    Poet Tanis Rideout also participated in the PERL tour and appears in the film.
+                    <br><br>
+                    Escarpment Blues won the award for Best Music DVD at the 2007 Juno Awards.
+
+
+                </p>
+            </div>
+            <div class="col-sm-5" id="containerLyrics">
+                <h1> Lyrics </h1>
+                <p class="lyrics">If they blow a hole in my backyard<br>
+                    Everyone is gonna run away<br>
+                    The creeks won't flow to the Great Lake below<br>
+                    Will the water in the wells still be ok?<br>
+                    <br>
+                    We'll need to build some new apartments<br>
+                    And I know we're gonna have to fix the roads<br>
+                    But if we blow a hole in the escarpment<br>
+                    The wild ones won't have anywhere to go<br>
+                    <br>
+                    If they blow a hole in the backbone<br>
+                    The one that runs cross the muscles of the land<br>
+                    We might get a load of stone for the road<br>
+                    But I don't know how much longer we can stand<br>
+                    <br>
+                    We'll keep driving on the Blind Line<br>
+                    If we don't know where we want to go<br>
+                    Even knowledge that's sound can get watered down<br>
+                    Truth can get sucked out the car window<br>
+                    <br>
+                    We're two-thirds water<br>
+                    What do we really need?<br>
+                    But sun, showers, soil and seed<br>
+                    We're two-thirds water<br>
+                    The aquifers provide<br>
+                    Deep down in the rock<br>
+                    There's a pearl inside<br>
+                    <br>
+                    If they blow a hole in the backbone<br>
+                    The one that runs across the muscles of the land<br>
+                    We might get a load of stone for the road<br>
+                    But I don't know how much longer we can stand.</p>
+            </div>
+
+            <div class="col-sm-3">
+
+                <a class="btn btn-social-icon btn-twitter">
+                    <span class="fa fa-twitter"></span>
+                </a>
+
+                <a class="btn btn-social-icon btn-facebook">
+                    <span class="fa fa-facebook"></span>
+                </a>
+
+                <a class="btn btn-social-icon btn-instagram">
+                    <span class="fa fa-instagram"></span>
+                </a>
+
+                <a class="btn btn-social-icon btn-google">
+                    <span class="fa fa-google"></span>
+                </a>
+
+                <a class="btn btn-social-icon btn-linkedin">
+                    <span class="fa fa-linkedin"></span>
+                </a>
+
+                <a class="btn btn-social-icon btn-yahoo">
+                    <span class="fa fa-yahoo"></span>
+                </a>
+                <hr>
+                <p class="details">Song details</p>
+
+                <p class="songDetails">Song Name : Escarpment<br>
+                    By : Sarah Harmer<br>
+                    Country : Canada<br>
+                    Album : -<br>
+                    Date Added : 10 Oct 2018<br>
+                    Genre : Folk</p>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="container-fluid" id="comments">
+        <header>Reviews</header>
+        <hr>
+        <div class="row" ng-repeat="article in articles">
+            <div class="col-sm-12">
+                <p class="username"><span class="glyphicon glyphicon-user"></span> From : {{article.username}}</p>
+                <p class="comment">Comment : {{article.comment}}</p>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="container-fluid" id="comments">
+
+        <form role="form" name="postForm" ng-submit="createPost()" novalidate="">
+            <legend>Comments</legend>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="form-group" ng-class="{'has-error': postForm.usernameTxt.$invalid && postForm.usernameTxt.$touched}">
+                        <label for="usernameTxt">Your Name</label>
+                        <input type="text" name="usernameTxt" class="form-control" placeholder="Name" ng-model="article.usernameTxt"
+                            ng-minlength="5" required="">
+                        <small class="help-block" ng-show="postForm.titleTxt.$error.minlength && postForm.titleTxt.$touched">Please
+                            enter a valid title for post.</small>
+                    </div>
+                    <div class="form-group" ng-class="{'has-error': postForm.commentTxt.$invalid && postForm.commentTxt.$touched}">
+                        <label for="commentTxt">Comment</label>
+                        <textarea name="commentTxt" class="form-control" placeholder="Comments Here!" ng-model="article.commentTxt"
+                            ng-minlength="20" required=""></textarea>
+                        <small class="help-block" ng-show="postForm.postTxt.$error.minlength && postForm.postTxt.$touched">Please
+                            enter a valid post.</small>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary" ng-disabled="postForm.$invalid">Add Comments</button>
+                        <div class="container" ng-show="success">
+                            <div class="row">
+                                <div class="alert alert-success">
+                                    <strong>Success!</strong> The comment has beed added.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>

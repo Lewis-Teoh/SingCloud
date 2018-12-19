@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>United States</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="PH/PH.css" />
+
+
+</head>
+
+<body ng-controller="IRELANDCtrl">
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">SingCloud</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#/welcome">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#/uploadFile">Upload a Song</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#/playlist">Random Playlist</a>
+                </li>
+                <li>
+
+                    <div class="nav-item dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Region
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#/US">America</a>
+                            <a class="dropdown-item" href="#/PH">Philippines</a>
+                            <a class="dropdown-item" href="#/ENGLAND">England</a>
+                            <a class="dropdown-item" href="#/SOUTH AFRICA">South Africa</a>
+                            <a class="dropdown-item" href="#/French">France</a>
+                            <a class="dropdown-item" href="#/CN">Canada</a>
+                            <a class="dropdown-item" href="#/IRELAND">Ireland</a>
+                        </div>
+                    </div>
+
+                </li>
+                <li class="nav-item" id="logout">
+                    <a class="nav-link disabled" ng-click="logout()" href="#">Log Out</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="containter-fluid">
+
+        <h1>Traditional / folk music of Ireland</h1>
+
+        <div class="row">
+            <div class="col-sm-2">
+
+            </div>
+            <div class="col-sm-8">
+                <p class="des">Each country may has different types of folks musics. From town to town, village by
+                    village this can be changed. Different music instrument or different style of folk music maybe
+                    used. Please help us to improve the SingCloud and send us some folk songs from your country. You
+                    can upload folk songs by clicking on 'Upload a song' on the top. Also if you can write an article
+                    about folk music of Ireland, we can put your article on folkcloud with your name.
+                    <br><br>
+                    On the list below you can find some folk songs or traditional songs from Ireland. Each song has
+                    some tags which specify its genres or musical instrument which is used in that song. Inside each
+                    page you can find more information about the artist or music genre. You can listen to all songs as
+                    playlist too or you can add each song to your personal playlist.</p>
+            </div>
+            <div class="col-sm-2">
+
+            </div>
+
+        </div>
+        <hr>
+        <h2>Folk Song list at Ireland</h2>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-1">
+
+            </div>
+            <div class="col-sm-10">
+                <div class="list-group">
+                    <a href="#/IRELAND/Glass" class="list-group-item list-group-item-info">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <img src="../Assets/TheClancyBrothers.jpg">
+                            </div>
+                            <div class="col-sm-9">
+                                <header> Song : The Parting Glass</header>
+                                <p class="description">By : The Clancy Brothers<p>
+                                        <p class="Year"> Year : 1963<p>
+                                                <p class="italic">The "parting glass", or "stirrup cup", or "coupe
+                                                    d'etrier" was the final hospitality offered to a departing guest.</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#/IRELAND/Cliffs" class="list-group-item list-group-item-success">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <img src="../Assets/Planxty.jpg">
+                            </div>
+                            <div class="col-sm-9">
+                                <header> Song : Cliffs of Dooneen</header>
+                                <p class="description">By : Planxty<p>
+                                        <p class="Year"> Year : 1975<p>
+                                                <p class="italic">The song was originally written as a poem by the
+                                                    author who was from Lixnaw, County Kerry. </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-1">
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
